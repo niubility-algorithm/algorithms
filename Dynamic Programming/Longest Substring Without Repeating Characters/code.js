@@ -3,7 +3,7 @@ const {Tracer, Array1DTracer, LogTracer, Array2DTracer, ChartTracer, Randomize, 
 // }
 
 // define tracer variables {
-const tracer = new Array1DTracer('Array');
+const array1DTracer = new Array1DTracer('Array');
 const logger = new LogTracer('无重复字符的最长子串');
 
 Layout.setRoot(new VerticalLayout([array2dTracer, logger]));
@@ -12,7 +12,7 @@ Layout.setRoot(new VerticalLayout([array2dTracer, logger]));
 var s = "ababcabcdabcdeabcdefabac";
 
 (function main() {
-    tracer.set(s);
+    array1DTracer.set(s);
 
     var beginIdx = 0, endIdx = 0, maxSize = 0;
     for (var i = 0; i < s.length; i++) {
@@ -21,13 +21,13 @@ var s = "ababcabcdabcdeabcdefabac";
 
         var existIdx = s.indexOf(s.charAt(i), beginIdx);
         if (existIdx < endIdx) {
-            tracer.select(beginIdx, i - 1);
-            tracer.patch(i);
+            array1DTracer.select(beginIdx, i - 1);
+            array1DTracer.patch(i);
             beginIdx = existIdx + 1;
 
             Tracer.delay();
-            tracer.deselect(0, beginIdx);
-            tracer.depatch(i);
+            array1DTracer.deselect(0, beginIdx);
+            array1DTracer.depatch(i);
 
             logger.println('碰撞长度：' + (endIdx - beginIdx + 1));
         }
