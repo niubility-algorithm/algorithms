@@ -4,6 +4,8 @@ const tracerArray = new Array1DTracer('入参数组');
 const tracerBit = new Array1DTracer('Bit数组');
 const logger = new LogTracer('两数之和');
 
+Layout.setRoot(new VerticalLayout([tracerArray, tracerBit, logger]));
+
 var twoSum = function (nums, target) {
     var volume = 32;
     var bitMode = volume - 1;
@@ -23,9 +25,9 @@ var twoSum = function (nums, target) {
     var nums = [2, 7, 11, 15];
     tracerArray.set(nums);
 
-   var idx = twoSum(nums, 9);
+    var idx = twoSum(nums, 9);
 
-   logger.println(idx);
+    logger.println(idx);
 
 })();
 
