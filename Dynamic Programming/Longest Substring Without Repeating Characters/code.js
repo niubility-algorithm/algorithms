@@ -40,6 +40,6 @@ var s = "ababcabcdabcdeabcdefabac";
 
     }
 
-    array1DTracer.println('最长长度：' + maxSize);
+    logger.println('最长长度：' + maxSize);
 
 })();
