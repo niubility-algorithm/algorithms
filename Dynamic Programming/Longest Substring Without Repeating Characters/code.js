@@ -6,7 +6,7 @@ const {Tracer, Array1DTracer, LogTracer, Array2DTracer, ChartTracer, Randomize, 
 const array1DTracer = new Array1DTracer('Array');
 const logger = new LogTracer('无重复字符的最长子串');
 
-Layout.setRoot(new VerticalLayout([array2dTracer, logger]));
+Layout.setRoot(new VerticalLayout([array1DTracer, logger]));
 // }
 
 var s = "ababcabcdabcdeabcdefabac";
@@ -40,6 +40,6 @@ var s = "ababcabcdabcdeabcdefabac";
 
     }
 
-    tracer.println('最长长度：' + maxSize);
+    array1DTracer.println('最长长度：' + maxSize);
 
 })();
